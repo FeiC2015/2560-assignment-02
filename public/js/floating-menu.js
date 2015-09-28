@@ -41,7 +41,7 @@ function JSFX_FloatTopDiv()
 		ftlObj.y += (pY - startY - ftlObj.y)/8;
 		}
 		ftlObj.sP(ftlObj.x, ftlObj.y);
-		setTimeout("floatBox()", 10);
+		setTimeout("stayTopLeft()", 10);
 	}
 	ftlObj = ml("floatBox");
 	stayTopLeft();

@@ -3,17 +3,108 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<title>IS Student Study Plan</title>
+
 		<!-- Latest compiled and minified CSS -->
 		<link rel='stylesheet' href='css/bootstrap.min.css'></link>
 		<link rel='stylesheet' href='css/bootstrap-theme.min.css'></link>
 		<link rel='stylesheet' href='css/style.css'></link>
 		<link rel='stylesheet' href='css/font-awesome.min.css'></link>
-		<script src='js/floating-menu.js'></script>
-		<script src='js/functions.js'></script>
 
 	</head>
-	
+
 	<body class='container-fluid'>
+	
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
+		<script>
+open = true;
+
+function start() {
+	var name = prompt('Please enter student name:', '');
+	var advisor = prompt('Please enter advisor name:', '');
+	var date = new Date();
+
+	var elemt = document.createElement('br');
+	var node_name = document.createTextNode('This plan of study is prepared for ' + name + ' under the instruction of ' + advisor);
+	var node_time = document.createTextNode('Today is ' + date.getMonth() + '/' + date.getDate() + '/' + date.getYear() + '.');
+
+	var node_head = document.createElementById('name-time');
+	node_head.appendChild(elemt);
+	node_head.appendChild(node_name);
+	node_head.appendChild(node_time);
+}
+
+function select(course) {
+	/* every time the page is opened, or refreshed, it will start a new process. */
+	/* Refresh page to re-start the process. */
+	if(open) {
+		start();
+		open = false;
+	}
+	if(course.getAttribute('class' == 'selected')) {
+		alert('This course has been chosen.');
+		return;
+	}
+
+	/* add the selected course into the print-out window. */
+	var courseID = course.getAttribute('id');
+	// var newElement;
+	// var countElement = 0;
+	if(courseID < 2300 || courseID == 12130) {
+		newElement = document.getElementById('foundation');
+		countElement = document.getElementById('fcount');
+	}else if (courseID < 2400) {
+		newElement = document.getElementById('cognitive');
+		countElement = document.getElementById('ccount');
+	}else if (courseID < 2500) {
+		var area = prompt('Do you want this course counted as Cognitive or System?', '');
+		if (area.charAt(0) == 'c') {
+			newElement = document.getElementById('cognitive');
+			countElement = document.getElementById('ccount');
+		}else if (area.charAt(0) == 's') {
+			newElement = document.getElementById('system');
+			countElement = document.getElementById('scount');
+		}else {
+			var error = prompt('Wrong!! Please re-enter: cognitive or system:', '');
+		}
+	}else if (courseID < 3000) {
+		newElement = document.getElementById('system');
+		countElement = document.getElementById('scount');
+	}else {
+		newElement = document.getElementById('elective');
+		countElement = document.getElementById('ecount');
+	}
+
+	newChild = course.cloneNode(true);
+	tn = newChild.firstChild;
+	txt = tn.nodeValue.substr(0, 11);
+	tn.data = txt;
+	newChild.appendChild(tn);
+	newChild.setAttribute('onclick', 'deselect(this)');
+	course.setAttribute('class', 'selected');
+	newChild.setAttribute('class', 'chosen');
+	newElement.appendChild(newChild);
+	count = newElement.childNodes.length;
+	ctnode = document.createTextNode(count);
+	newElement.removeChild(countElement.childNodes[0]);
+	newElement.appendChild(ctnode);
+}
+
+function deselect(course) {
+	var cid = course.getAttribute('id');
+	newElement = course.parentNode;
+	newElement.removeChild(course);
+	var eid = newElement.getAttribute('id').toLowerCase() + 'c';
+	count = newElement.childNodes.length;
+	ctnode = document.createTextNode(count);
+	countElement = document.getElementById(eid);
+	countElement.removeChild(newElement.childNodes[0]);
+	countElement.appendChild(cid);
+	ref = document.getElementById(cid);
+	ref.setAttribute('class', 'course');
+}
+		</script>
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->	
+
 		<div class='title'>
 			<div class='col-sm-9 col-sm-offset-1'>Plan of Study</div>
 		</div>
@@ -111,81 +202,29 @@
 			<li id = '12510' class = 'course' onclick=select(this)>TELCOM  2510 U.S. TELECOMMUNICATIONS POLICY</li>
 		</ul></div>
 
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
+		<script src='js/layers.js'></script>
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
 
-<script>
-if (!document.layers) {
-	document.write('<div id="floatBox" style="position: absolute">')
-}
-</script>
+		<!-- create a box for selected courses -->
+		<layer id='floatBox'>
+			<blockquote class='plan'>
+				<div class='title-box'><p>Plan of Study</p></div>
+				<div id='name-time'></div>
+				<div>Foundation Area (<span id='fcount'>0</span>/2)</div>
+				<div id='foundation'></div>
+				<div>Cognitive Area (<span id='ccount'>0</span>/2)</div>
+				<div id='cognitive'></div>
+				<div>Systems Area (<span id='fcount'>0</span>/6)</div>
+				<div id='system'></div>
+				<div>Elective Area (<span id='ecount'>0</span>/0)</div>
+				<div id='elective'></div>
+			</blockquote>
+		</layer>
 
-	<!-- create a box for selected courses -->
-	<layer id='floatBox'>
-		<blockquote class='plan'>
-			<div class='title'><p>Plan of Study</p></div>
-			<div id='name-time'></div>
-			<div>Foundation Area (<span id='fcount'>0</span>/2)</div>
-			<div id='foundation'></div>
-			<div>Cognitive Area (<span id='ccount'>0</span>/2)</div>
-			<div id='cognitive'></div>
-			<div>Systems Area (<span id='fcount'>0</span>/6)</div>
-			<div id='system'></div>
-			<div>Elective Area (<span id='ecount'>0</span>/0)</div>
-			<div id='elective'></div>
-		</blockquote>
-	</layer>
-
-<script>
-/*
-Floating Menu script-  Roy Whittle (http://www.javascript-fx.com/)
-Script featured on/available at http://www.dynamicdrive.com/
-This notice must stay intact for use
-*/
-
-//Enter "frombottom" or "fromtop"
-var verticalpos="fromtop"
-
-if (!document.layers)
-document.write('</div>')
-
-function JSFX_FloatTopDiv()
-{
-	var startX = 700,
-	var startY = 100;
-	var ns = (navigator.appName.indexOf("Netscape") != -1);
-	var d = document;
-	function ml(id)
-	{
-		var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
-		if(d.layers)el.style=el;
-		el.sP=function(x,y){this.style.left=x;this.style.top=y;};
-		el.x = startX;
-		if (verticalpos=="fromtop")
-		el.y = startY;
-		else{
-		el.y = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
-		el.y -= startY;
-		}
-		return el;
-	}
-	window.stayTopLeft=function()
-	{
-		if (verticalpos=="fromtop"){
-		var pY = ns ? pageYOffset : document.body.scrollTop;
-		ftlObj.y += (pY + startY - ftlObj.y)/8;
-		}
-		else{
-		var pY = ns ? pageYOffset + innerHeight : document.body.scrollTop + document.body.clientHeight;
-		ftlObj.y += (pY - startY - ftlObj.y)/8;
-		}
-		ftlObj.sP(ftlObj.x, ftlObj.y);
-		setTimeout("stayTopLeft()", 10);
-	}
-	ftlObj = ml("floatBox");
-	stayTopLeft();
-}
-JSFX_FloatTopDiv();
-
-	</script>
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
+		<script src='js/floating-menu.js'></script>
+		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
 
   </body>
 </html>

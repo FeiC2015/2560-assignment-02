@@ -21,6 +21,13 @@ body {
 	padding: 50px 5px 10px 5px;
 }
 
+.title-box {
+	text-align: center;
+	color: #101010;
+	font-size: 20px;
+	font-family: serif;
+}
+
 div {
 	padding-left: 20px;
 }
