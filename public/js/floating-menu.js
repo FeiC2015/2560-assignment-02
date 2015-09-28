@@ -46,4 +46,11 @@ function JSFX_FloatTopDiv()
 	ftlObj = ml("floatBox");
 	stayTopLeft();
 }
+
+JSFX_FloatTopDiv();
+
+
+
+
+
 JSFX_FloatTopDiv();
