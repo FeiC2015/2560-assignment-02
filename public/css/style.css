@@ -1,0 +1,105 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Sep 28, 2015, Sep 28, 2015 2:14:42 PM
+    Author     : Fei
+*/
+
+body {
+	background-color: #FFFFFF;
+}
+
+.title {
+	text-align: center;
+	color: #101010;
+	font-size: 50px;
+	font-family: serif;
+	outline: #FF0000, dashed, 1px;
+	padding: 50px 5px 10px 5px;
+}
+
+div {
+	padding-left: 20px;
+}
+
+.subtitle {
+	text-align: left;
+	color: #101010;
+	font-size: 30px;
+	font-family: serif;
+	outline: #FF0000, dashed, 1px;
+	padding-bottom: 20px;
+	padding-top: 20px;
+}
+
+.text {
+	font-family: sans-serif;
+	color: #101010;
+	outline: #FF0000, dashed, 1px;
+}
+
+.course-area {
+	font: 20px, serif, #101010;
+	outline: #FF0000, dashed, 1px;
+
+}
+
+.course-area-box {
+	font: 8px, sans-serif, #101010;
+	outline: #101010, dashed, 1px;
+}
+
+.name-time {
+	text-align: center;
+	color: #101010;
+	font-size: 20pt;
+	font-family: serif;
+	outline: #FF0000, dashed, 1px;
+}
+
+
+.course {
+	font: 6pt, sans-serif, #101010;
+	outline: #FF0000, dashed, 1px;
+}
+
+.course-box {
+	font: 6pt, sans-serif, #101010;
+	outline: #FF0000, dashed, 1px;
+}
+
+.selected {
+	text-decoration: line-through;
+	background-color: #FFFFFF;
+}
+
+.chosen {
+	color: red;
+	font-size: 12pt;
+	list-style-type: circle;
+}
+
+.plan {
+	border-width: thin;
+	border-style: solid;
+	padding: 10px;
+	background-color: #EEEFFF;
+	width: 350px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
