@@ -4,9 +4,9 @@
  * and open the template in the editor.
  */
 
-open = true;
+init = true;
 
-function start() {
+function open() {
 	var name = prompt('Please enter student name:', '');
 	var advisor = prompt('Please enter advisor name:', '');
 	var date = new Date();
@@ -15,20 +15,20 @@ function start() {
 	var node_name = document.createTextNode('This plan of study is prepared for ' + name + ' under the instruction of ' + advisor);
 	var node_time = document.createTextNode('Today is ' + date.getMonth() + '/' + date.getDate() + '/' + date.getYear() + '.');
 
-	var node_head = document.createElementById('name-time');
+	var node_head = document.createElement('name-time');
 	node_head.appendChild(elemt);
 	node_head.appendChild(node_name);
 	node_head.appendChild(node_time);
 }
 
-function select(course) {
+function pick(course) {
 	/* every time the page is opened, or refreshed, it will start a new process. */
 	/* Refresh page to re-start the process. */
-	if(open) {
-		start();
-		open = false;
+	if(init) {
+		open();
+		init = false;
 	}
-	if(course.getAttribute('class' == 'selected')) {
+	if(course.getAttribute('class') == 'selected') {
 		alert('This course has been chosen.');
 		return;
 	}
@@ -73,9 +73,10 @@ function select(course) {
 	newElement.appendChild(newChild);
 	count = newElement.childNodes.length;
 	ctnode = document.createTextNode(count);
-	newElement.removeChild(countElement.childNodes[0]);
-	newElement.appendChild(ctnode);
+	countElement.removeChild(countElement.childNodes[0]);
+	countElement.appendChild(ctnode);
 }
+
 
 function deselect(course) {
 	var cid = course.getAttribute('id');
@@ -85,7 +86,7 @@ function deselect(course) {
 	count = newElement.childNodes.length;
 	ctnode = document.createTextNode(count);
 	countElement = document.getElementById(eid);
-	countElement.removeChild(newElement.childNodes[0]);
+	countElement.removeChild(countElement.childNodes[0]);
 	countElement.appendChild(cid);
 	ref = document.getElementById(cid);
 	ref.setAttribute('class', 'course');

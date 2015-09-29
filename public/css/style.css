@@ -17,7 +17,7 @@ body {
 	color: #101010;
 	font-size: 50px;
 	font-family: serif;
-	outline: #FF0000, dashed, 1px;
+	border: #FF0000, dashed, 1px;
 	padding: 50px 5px 10px 5px;
 }
 
@@ -30,6 +30,7 @@ body {
 
 div {
 	padding-left: 20px;
+	border: 1px dashed #FF0000;
 }
 
 .subtitle {
@@ -59,7 +60,7 @@ div {
 	outline: #101010, dashed, 1px;
 }
 
-.name-time {
+#name-time {
 	text-align: center;
 	color: #101010;
 	font-size: 20pt;
@@ -97,7 +98,14 @@ div {
 	width: 350px;
 }
 
-
+#floatBox {
+	float: right ;
+	filter: alpha(opacity=60);
+	background-color: #ffffff;
+	border: 3px solid black;
+	margin: 30px;
+	width: 350px;
+}
 
 
 
