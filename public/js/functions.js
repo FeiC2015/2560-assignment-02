@@ -1,8 +1,12 @@
 /* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Parts of code of 
+ * function open()
+ * function pick(o)
+ * function deselected(o)
+ * are from the example given as examples.
+ *
  */
+
 
 init = true;
 
@@ -34,32 +38,34 @@ function pick(course) {
 	}
 
 	// add the selected course into the print-out window.
+
 	var courseID = course.getAttribute('id');
 
 	if(courseID < 2300 || courseID == 12130) {
 		newElement = document.getElementById('foundation');
-		countElement = document.getElementById('fcount');
+		countElement = document.getElementById('f-count');
 	}else if (courseID < 2400) {
 		newElement = document.getElementById('cognitive');
-		countElement = document.getElementById('ccount');
+		countElement = document.getElementById('c-count');
 	}else if (courseID < 2500) {
 		var area = prompt('Do you want this course counted as Cognitive or System?', '');
+		// user has to type word starting with 'c' or 's'
 		while (area.charAt(0) != 'c' && area.charAt(0) != 's'){
 			area = prompt('Wrong!! Please re-enter: cognitive or system:', '');
 		}
 		if (area.charAt(0) == 'c') {
 			newElement = document.getElementById('cognitive');
-			countElement = document.getElementById('ccount');
+			countElement = document.getElementById('c-count');
 		}else if (area.charAt(0) == 's') {
 			newElement = document.getElementById('system');
-			countElement = document.getElementById('scount');
+			countElement = document.getElementById('s-count');
 		}
 	}else if (courseID < 3000) {
 		newElement = document.getElementById('system');
-		countElement = document.getElementById('scount');
+		countElement = document.getElementById('s-count');
 	}else {
 		newElement = document.getElementById('elective');
-		countElement = document.getElementById('ecount');
+		countElement = document.getElementById('e-count');
 	}
 
 	newChild = course.cloneNode(true);
@@ -88,6 +94,8 @@ function deselect(coursePicked) {
 	count = newElement.childNodes.length;
 	countText = document.createTextNode(count);
 	countElement = document.getElementById(countID);
+	
+	// if there is any selected course, remove them
 	while(countElement.hasChildNodes()) {
 		countElement.removeChild(countElement.childNodes[0]);
 	}
@@ -101,36 +109,43 @@ function myPrint() {
 	window.print();
 }
 
-// var fModel {
-// 	selectedClasses: ko.observableArray([]);
-// 	availableClasses: ko.observableArray([
-// 		{'id': 2000, 'title': 'INFSCI 2000 Introduction to Information Science'},
-// 		{'id': 2500, 'title': 'INFSCI 2500 Data Structure'};
-// 		{'id': 2801, 'title': 'INFSCI 2801 Geospatial Information Systems'};
-// 		{'id': 2020, 'title': 'INFSCI 2020 MATHEMATICAL FOUNDATIONS FOR INFORMATION SCIENCE'};
-// 		{'id': 2040, 'title': 'INFSCI 2040 RESEARCH DESIGN'};
-// 		{'id': 2060, 'title': 'INFSCI 2060 STATISTICS IN INFORMATION SCIENCE'};
-// 		{'id': 2120, 'title': 'INFSCI 2120 INFORMATION AND CODING THEORY'};
-// 		{'id': 2130, 'title': 'INFSCI 2130 DECISION ANALYSIS AND DECISION SUPPORT SYSTEMS'};
-// 		{'id': 2140, 'title': 'INFSCI 2140 INFORMATION STORAGE AND RETRIEVAL'};
-// 		{'id': 2150, 'title': 'INFSCI 2150 INTRODUCTION TO SECURITY'};
-// 		{'id': 2160, 'title': 'INFSCI 2160 DATA MINING'};
-// 		{'id': 2170, 'title': 'INFSCI 2170 CRYPTOGRAPHY'};
-// 		{'id': 2180, 'title': 'INFSCI 2180 (2906) KNOWLEDGE REPRESENTATION AND THE SEMANTIC WEB'};
-// 	]);
-// 	classCliked: function(new) {
-// 		console.log('Selecting', new);
-// 		if(_.find(viewModel.selectedClasses(), new)) {
-// 			viewModel.selectedClasses.remove(new);
-// 		}else {
-// 			viewModel.selectedClasses.push(new);
-// 		}
+/*
 
-// 		return false;
-// 	}
-// }
+function for knockout.
+need future work.
 
-// ko.applyBindings(fModel);
+var fModel {
+	selectedClasses: ko.observableArray([]);
+	availableClasses: ko.observableArray([
+		{'id': 2000, 'title': 'INFSCI 2000 Introduction to Information Science'},
+		{'id': 2500, 'title': 'INFSCI 2500 Data Structure'};
+		{'id': 2801, 'title': 'INFSCI 2801 Geospatial Information Systems'};
+		{'id': 2020, 'title': 'INFSCI 2020 MATHEMATICAL FOUNDATIONS FOR INFORMATION SCIENCE'};
+		{'id': 2040, 'title': 'INFSCI 2040 RESEARCH DESIGN'};
+		{'id': 2060, 'title': 'INFSCI 2060 STATISTICS IN INFORMATION SCIENCE'};
+		{'id': 2120, 'title': 'INFSCI 2120 INFORMATION AND CODING THEORY'};
+		{'id': 2130, 'title': 'INFSCI 2130 DECISION ANALYSIS AND DECISION SUPPORT SYSTEMS'};
+		{'id': 2140, 'title': 'INFSCI 2140 INFORMATION STORAGE AND RETRIEVAL'};
+		{'id': 2150, 'title': 'INFSCI 2150 INTRODUCTION TO SECURITY'};
+		{'id': 2160, 'title': 'INFSCI 2160 DATA MINING'};
+		{'id': 2170, 'title': 'INFSCI 2170 CRYPTOGRAPHY'};
+		{'id': 2180, 'title': 'INFSCI 2180 (2906) KNOWLEDGE REPRESENTATION AND THE SEMANTIC WEB'};
+	]);
+	classCliked: function(new) {
+		console.log('Selecting', new);
+		if(_.find(viewModel.selectedClasses(), new)) {
+			viewModel.selectedClasses.remove(new);
+		}else {
+			viewModel.selectedClasses.push(new);
+		}
+
+		return false;
+	}
+}
+
+ko.applyBindings(fModel);
+
+*/
 
 
 
