@@ -14,21 +14,24 @@
 
 	<body class='container-fluid'>
 		
-		<!-- create a separate box to store the selected courses -->
 		<div id='floatBox'>
 			<div id='box-title'>Plan of Study</div>
 			<div id='input'></div>
-			<div class='box-area'>Foundation Area (<span id='f-count'>0</span>/2)</div>
+			<div class='box-area'>Foundation Area (<span id='fcount'>0</span>/2)</div>
 			<div class='box-course' id='foundation'></div>
-			<div class='box-area'>Cognitive Area (<span id='c-count'>0</span>/2)</div>
+			<div class='box-area'>Cognitive Area (<span id='ccount'>0</span>/2)</div>
 			<div class='box-course' id='cognitive'></div>
-			<div class='box-area'>Systems Area (<span id='s-count'>0</span>/6)</div>
+			<div class='box-area'>Systems Area (<span id='fcount'>0</span>/6)</div>
 			<div class='box-course' id='system'></div>
-			<div class='box-area'>Elective Area (<span id='e-count'>0</span>/2)</div>
+			<div class='box-area'>Elective Area (<span id='ecount'>0</span>/0)</div>
 			<div class='box-course' id='elective'></div>
+			<div>
+				<button type='button' onclick='myPrint()'>Print</button>
+				<button type='button'>Email</button>
+			</div>
 		</div>
 
-		<div class='title'>Plan of Study</div>
+		<div class='title'>Plan of Study</center></div>
 
 		<div class='subtitle'>Course List</div>
 
@@ -123,6 +126,36 @@
 			<li id = '12510' class = 'available' onclick='pick(this)'>TELCOM  2510 U.S. TELECOMMUNICATIONS POLICY</li>
 		</ul></div>
 
+		
+		<!-- create a box for selected courses -->
+
+		<!-- <div id='floatBox'>
+			<div class='title-box'><p>Plan of Study</p></div>
+				<div id='name-time'></div>
+				<div>Foundation Area (<span id='fcount'>0</span>/2)</div>
+				<div id='foundation'></div>
+				<div>Cognitive Area (<span id='ccount'>0</span>/2)</div>
+				<div id='cognitive'></div>
+				<div>Systems Area (<span id='fcount'>0</span>/6)</div>
+				<div id='system'></div>
+				<div>Elective Area (<span id='ecount'>0</span>/0)</div>
+				<div id='elective'></div>
+		</div> -->
+		<!-- <layer id='floatBox'>
+			<blockquote class='plan'>
+				<div class='title-box'><p>Plan of Study</p></div>
+				<div id='name-time'></div>
+				<div>Foundation Area (<span id='fcount'>0</span>/2)</div>
+				<div id='foundation'></div>
+				<div>Cognitive Area (<span id='ccount'>0</span>/2)</div>
+				<div id='cognitive'></div>
+				<div>Systems Area (<span id='fcount'>0</span>/6)</div>
+				<div id='system'></div>
+				<div>Elective Area (<span id='ecount'>0</span>/0)</div>
+				<div id='elective'></div>
+			</blockquote>
+		</layer>
+ -->
 		<!-- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -=- -->
 		<script src='js/functions.js'></script>
 		<script src='js/layers.js'></script>
