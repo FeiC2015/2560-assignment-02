@@ -96,10 +96,9 @@ function deselect(coursePicked) {
 	course.setAttribute('class', 'available');
 }
 
+// try to use knockout
+// need future work
 
-function myPrint() {
-	window.print();
-}
 
 // var fModel {
 // 	selectedClasses: ko.observableArray([]);
