@@ -96,6 +96,11 @@ function deselect(coursePicked) {
 	course.setAttribute('class', 'available');
 }
 
+
+function myPrint() {
+	window.print();
+}
+
 // var fModel {
 // 	selectedClasses: ko.observableArray([]);
 // 	availableClasses: ko.observableArray([
