@@ -13,120 +13,113 @@
 	</head>
 
 	<body class='container-fluid'>
+		
 		<div id='floatBox'>
-			<div class='title-box'>Plan of Study</div>
-				<div id='name-time'></div>
-				<div>Foundation Area (<span id='fcount'>0</span>/2)</div>
-				<div id='foundation'></div>
-				<div>Cognitive Area (<span id='ccount'>0</span>/2)</div>
-				<div id='cognitive'></div>
-				<div>Systems Area (<span id='fcount'>0</span>/6)</div>
-				<div id='system'></div>
-				<div>Elective Area (<span id='ecount'>0</span>/0)</div>
-				<div id='elective'></div>
+			<div id='box-title'>Plan of Study</div>
+				<div id='input'></div>
+				<div class='box-area'>Foundation Area (<span id='fcount'>0</span>/2)</div>
+				<div class='box-course' id='foundation'></div>
+				<div class='box-area'>Cognitive Area (<span id='ccount'>0</span>/2)</div>
+				<div class='box-course' id='cognitive'></div>
+				<div class='box-area'>Systems Area (<span id='fcount'>0</span>/6)</div>
+				<div class='box-course' id='system'></div>
+				<div class='box-area'>Elective Area (<span id='ecount'>0</span>/0)</div>
+				<div class='box-course' id='elective'></div>
 		</div>
 
-		<div class='title'>
-			<center><div>Plan of Study</div></center>
-		</div>
+		<div class='title'>Plan of Study</center></div>
 
 		<div class='subtitle'>Course List</div>
 
 		<div class='course-area'>Foundations area - Formal Foundations</div>
 		<div><ul>
-			<li id = '2000' class = 'course' onclick='pick(this)'>INFSCI 2000 INTRODUCTION TO INFORMATION SCIENCE</li>
-			<li id = '2020' class = 'course' onclick='pick(this)'>INFSCI 2020 MATHEMATICAL FOUNDATIONS FOR INFORMATION SCIENCE</li>
-			<li id = '2040' class = 'course' onclick='pick(this)'>INFSCI 2040 (2100) RESEARCH DESIGN</li>
-			<li id = '2060' class = 'course' onclick='pick(this)'>INFSCI 2060 STATISTICS IN INFORMATION SCIENCE</li>
+			<li id = '2000' class = 'available' onclick='pick(this)'>INFSCI 2000 INTRODUCTION TO INFORMATION SCIENCE</li>
+			<li id = '2020' class = 'available' onclick='pick(this)'>INFSCI 2020 MATHEMATICAL FOUNDATIONS FOR INFORMATION SCIENCE</li>
+			<li id = '2040' class = 'available' onclick='pick(this)'>INFSCI 2040 (2100) RESEARCH DESIGN</li>
+			<li id = '2060' class = 'available' onclick='pick(this)'>INFSCI 2060 STATISTICS IN INFORMATION SCIENCE</li>
 		</ul></div>
 		<div class='course-area'>Foundations area - Applied Foundations</div>
 		<div><ul>
-
-
-
-
-
-			
-			<li id = '2120' class = 'course' onclick='pick(this)'>INFSCI 2120 INFORMATION AND CODING THEORY</li>
-			<li id = '2130' class = 'course' onclick='pick(this)'>INFSCI 2130 DECISION ANALYSIS AND DECISION SUPPORT SYSTEMS</li>
-			<li id = '2140' class = 'course' onclick='pick(this)'>INFSCI 2140 INFORMATION STORAGE AND RETRIEVAL</li>
-			<li id = '2150' class = 'course' onclick='pick(this)'>INFSCI 2150 INTRODUCTION TO SECURITY</li>
-			<li id = '2160' class = 'course' onclick='pick(this)'>INFSCI 2160 DATA MINING</li>
-			<li id = '12130' class = 'course' onclick='pick(this)'>TELCOM 2130 QUEUING THEORY</li>
-			<li id = '2170' class = 'course' onclick='pick(this)'>INFSCI 2170 CRYPTOGRAPHY</li>
-			<li id = '2180' class = 'course' onclick='pick(this)'>INFSCI 2180 (2906) KNOWLEDGE REPRESENTATION AND THE SEMANTIC WEB</li>
+			<li id = '2120' class = 'available' onclick='pick(this)'>INFSCI 2120 INFORMATION AND CODING THEORY</li>
+			<li id = '2130' class = 'available' onclick='pick(this)'>INFSCI 2130 DECISION ANALYSIS AND DECISION SUPPORT SYSTEMS</li>
+			<li id = '2140' class = 'available' onclick='pick(this)'>INFSCI 2140 INFORMATION STORAGE AND RETRIEVAL</li>
+			<li id = '2150' class = 'available' onclick='pick(this)'>INFSCI 2150 INTRODUCTION TO SECURITY</li>
+			<li id = '2160' class = 'available' onclick='pick(this)'>INFSCI 2160 DATA MINING</li>
+			<li id = '12130' class = 'available' onclick='pick(this)'>TELCOM 2130 QUEUING THEORY</li>
+			<li id = '2170' class = 'available' onclick='pick(this)'>INFSCI 2170 CRYPTOGRAPHY</li>
+			<li id = '2180' class = 'available' onclick='pick(this)'>INFSCI 2180 (2906) KNOWLEDGE REPRESENTATION AND THE SEMANTIC WEB</li>
 		</ul></div>
 
 		<div class='course-area'>Professional area</div>
 		<div><ul>
-			<li id = '2210' class = 'course' onclick='pick(this)'>INFSCI 2210 INFORMATION  ETHICS</li>
-			<li id = '2220' class = 'course' onclick='pick(this)'>INFSCI 2220 INFORMATION  POLICY</li>
-			<li id = '12420' class = 'course' onclick='pick(this)'>TELCOM 2420 PROJECT MANAGEMENT</li>
+			<li id = '2210' class = 'available' onclick='pick(this)'>INFSCI 2210 INFORMATION  ETHICS</li>
+			<li id = '2220' class = 'available' onclick='pick(this)'>INFSCI 2220 INFORMATION  POLICY</li>
+			<li id = '12420' class = 'available' onclick='pick(this)'>TELCOM 2420 PROJECT MANAGEMENT</li>
 		</ul></div>
 
 		<div>Cognitive   Area - Cognitive Science</div>
 		<div><ul>
-			<li id = '2300' class = 'course' onclick='pick(this)'>INFSCI 2300 HUMAN INFORMATION PROCESSING</li>
-			<li id = '2350' class = 'course' onclick='pick(this)'>INFSCI 2350 HUMAN FACTORS IN SYSTEMS</li>	
+			<li id = '2300' class = 'available' onclick='pick(this)'>INFSCI 2300 HUMAN INFORMATION PROCESSING</li>
+			<li id = '2350' class = 'available' onclick='pick(this)'>INFSCI 2350 HUMAN FACTORS IN SYSTEMS</li>	
 		</ul></div>
 
 		<div class='course-area'>Cognitive  Area - Congnitive Science and Systems</div>
 		<div><ul>
-			<li id = '2410' class = 'course' onclick='pick(this)'>INFSCI 2410 INTRODUCTION TO NEURAL NETWORKS</li>
-			<li id = '2420' class = 'course' onclick='pick(this)'>INFSCI 2420 NATURAL LANGUAGE PROCESSING</li>
-			<li id = '2440' class = 'course' onclick='pick(this)'>INFSCI 2440 ARTIFICIAL INTELLIGENCE</li>
-			<li id = '2450' class = 'course' onclick='pick(this)'>INFSCI 2450 ARTIFICIAL INTELLIGENCE PROGRAMMING TOOLS</li>
-			<li id = '2460' class = 'course' onclick='pick(this)'>INFSCI 2460 SPATIAL REASONING FOR GIS</li>
-			<li id = '2470' class = 'course' onclick='pick(this)'>INFSCI 2470 INTERACTIVE SYSTEM DESIGN</li>
+			<li id = '2410' class = 'available' onclick='pick(this)'>INFSCI 2410 INTRODUCTION TO NEURAL NETWORKS</li>
+			<li id = '2420' class = 'available' onclick='pick(this)'>INFSCI 2420 NATURAL LANGUAGE PROCESSING</li>
+			<li id = '2440' class = 'available' onclick='pick(this)'>INFSCI 2440 ARTIFICIAL INTELLIGENCE</li>
+			<li id = '2450' class = 'available' onclick='pick(this)'>INFSCI 2450 ARTIFICIAL INTELLIGENCE PROGRAMMING TOOLS</li>
+			<li id = '2460' class = 'available' onclick='pick(this)'>INFSCI 2460 SPATIAL REASONING FOR GIS</li>
+			<li id = '2470' class = 'available' onclick='pick(this)'>INFSCI 2470 INTERACTIVE SYSTEM DESIGN</li>
 		</ul></div>
 
 		<div class='course-area'>Systems and Technology Area - General Systems and Technology</div>
 		<div><ul>
-			<li id = '2500' class = 'course' onclick='pick(this)'>INFSCI 2500 (2610) DATA STRUCTURES</li>
-			<li id = '2510' class = 'course' onclick='pick(this)'>INFSCI 2510  INFORMATION SYSTEMS ANALYSIS</li>
-			<li id = '2511' class = 'course' onclick='pick(this)'>INFSCI 2511 INFORMATION SYSTEMS  DESIGN</li>
-			<li id = '2540' class = 'course' onclick='pick(this)'>INFSCI 2540 SOFTWARE ENGINEERING</li>
-			<li id = '2550' class = 'course' onclick='pick(this)'>INFSCI 2550 CLIENT-SERVER SYSTEMS</li>
-			<li id = '2560' class = 'course' onclick='pick(this)'>INFSCI 2560 (2870) WEB TECHNOLOGIES AND STANDARDS</li>
-			<li id = '2570' class = 'course' onclick='pick(this)'>INFSCI 2570 MANAGEMENT  INFORMATION SYSTEMS</li>
-			<li id = '2591' class = 'course' onclick='pick(this)'>INFSCI 2591 (2611) ALGORITHM DESIGN</li>
-			<li id = '2592' class = 'course' onclick='pick(this)'>INFSCI 2592 (2630) ARCHITECTURES AND ASSEMBLER LANGUAGE</li>
-			<li id = '2593' class = 'course' onclick='pick(this)'>INFSCI 2593 (2670) OPERATING SYSTEMS</li>
+			<li id = '2500' class = 'available' onclick='pick(this)'>INFSCI 2500 (2610) DATA STRUCTURES</li>
+			<li id = '2510' class = 'available' onclick='pick(this)'>INFSCI 2510  INFORMATION SYSTEMS ANALYSIS</li>
+			<li id = '2511' class = 'available' onclick='pick(this)'>INFSCI 2511 INFORMATION SYSTEMS  DESIGN</li>
+			<li id = '2540' class = 'available' onclick='pick(this)'>INFSCI 2540 SOFTWARE ENGINEERING</li>
+			<li id = '2550' class = 'available' onclick='pick(this)'>INFSCI 2550 CLIENT-SERVER SYSTEMS</li>
+			<li id = '2560' class = 'available' onclick='pick(this)'>INFSCI 2560 (2870) WEB TECHNOLOGIES AND STANDARDS</li>
+			<li id = '2570' class = 'available' onclick='pick(this)'>INFSCI 2570 MANAGEMENT  INFORMATION SYSTEMS</li>
+			<li id = '2591' class = 'available' onclick='pick(this)'>INFSCI 2591 (2611) ALGORITHM DESIGN</li>
+			<li id = '2592' class = 'available' onclick='pick(this)'>INFSCI 2592 (2630) ARCHITECTURES AND ASSEMBLER LANGUAGE</li>
+			<li id = '2593' class = 'available' onclick='pick(this)'>INFSCI 2593 (2670) OPERATING SYSTEMS</li>
 		</ul></div>
 
 		<div class='course-area'>Systems and Technology Area - networks and security</div>
 		<div><ul>
-			<li id = '12000' class = 'course' onclick='pick(this)'>TELCOM 2000 INTRODUCTION TO TELECOMMUNICATIONS</li>
-			<li id = '12110' class = 'course' onclick='pick(this)'>TELCOM 2110 NETWORK DESIGN</li>
-			<li id = '12300' class = 'course' onclick='pick(this)'>TELCOM 2300 SOFTWARE TOOLS AND TECHNIQUES</li>
-			<li id = '2620' class = 'course' onclick='pick(this)'>INFSCI 2620 (2570) DEVELOPING SECURE SYSTEMS</li>
-			<li id = '2621' class = 'course' onclick='pick(this)'>INFSCI 2621 (2820) SECURITY MANAGEMENT</li>
-			<li id = '2629' class = 'course' onclick='pick(this)'>INFSCI 2629 (2190) CAPSTONE IN SECURITY</li>
-			<li id = '2640' class = 'course' onclick='pick(this)'>INFSCI 2640 PROGRAMMING LANGUAGES AND ENVIRONMENTS</li>
+			<li id = '12000' class = 'available' onclick='pick(this)'>TELCOM 2000 INTRODUCTION TO TELECOMMUNICATIONS</li>
+			<li id = '12110' class = 'available' onclick='pick(this)'>TELCOM 2110 NETWORK DESIGN</li>
+			<li id = '12300' class = 'available' onclick='pick(this)'>TELCOM 2300 SOFTWARE TOOLS AND TECHNIQUES</li>
+			<li id = '2620' class = 'available' onclick='pick(this)'>INFSCI 2620 (2570) DEVELOPING SECURE SYSTEMS</li>
+			<li id = '2621' class = 'available' onclick='pick(this)'>INFSCI 2621 (2820) SECURITY MANAGEMENT</li>
+			<li id = '2629' class = 'available' onclick='pick(this)'>INFSCI 2629 (2190) CAPSTONE IN SECURITY</li>
+			<li id = '2640' class = 'available' onclick='pick(this)'>INFSCI 2640 PROGRAMMING LANGUAGES AND ENVIRONMENTS</li>
 		</ul></div>
 
 
 		<div class='course-area'>Systems and Technology Area - Database and Web</div>
 		<div><ul>
-			<li id = '2710' class = 'course' onclick='pick(this)'>INFSCI 2710 DATABASE MANAGEMENT</li>
-			<li id = '2711' class = 'course' onclick='pick(this)'>INFSCI 2711 ADVANCED TOPIC IN DATABASE MANAGEMENT</li>
-			<li id = '2730' class = 'course' onclick='pick(this)'>INFSCI 2730 E-BUSINESS</li>
-			<li id = '2731' class = 'course' onclick='pick(this)'>INFSCI 2731 (2771) SECURITY IN E-COMMERCE</li>
-			<li id = '2739' class = 'course' onclick='pick(this)'>INFSCI 2739 WEB  SERVICES AND DISTRIBUTED COMPUTING</li>
-			<li id = '2780' class = 'course' onclick='pick(this)'>INFSCI 2780 INTERACTIVE GRAPHICS</li>
+			<li id = '2710' class = 'available' onclick='pick(this)'>INFSCI 2710 DATABASE MANAGEMENT</li>
+			<li id = '2711' class = 'available' onclick='pick(this)'>INFSCI 2711 ADVANCED TOPIC IN DATABASE MANAGEMENT</li>
+			<li id = '2730' class = 'available' onclick='pick(this)'>INFSCI 2730 E-BUSINESS</li>
+			<li id = '2731' class = 'available' onclick='pick(this)'>INFSCI 2731 (2771) SECURITY IN E-COMMERCE</li>
+			<li id = '2739' class = 'available' onclick='pick(this)'>INFSCI 2739 WEB  SERVICES AND DISTRIBUTED COMPUTING</li>
+			<li id = '2780' class = 'available' onclick='pick(this)'>INFSCI 2780 INTERACTIVE GRAPHICS</li>
 		</ul></div>
 
 		<div class='course-area'>Systems and Technology Area -  Human Centered</div>
 		<div><ul>
-			<li id = '2801' class = 'course' onclick='pick(this)'>INFSCI 2801 (2720) GEOSPATIAL INFORMATION SYSTEMS (GIS)</li>
-			<li id = '2802' class = 'course' onclick='pick(this)'>INFSCI 2802 (2751) INTERNET-BASED  INTEROPERABLE GIS</li>
-			<li id = '2809' class = 'course' onclick='pick(this)'>INFSCI 2809 SPATIAL MODELING AND ANALYSIS</li>
-			<li id = '2821' class = 'course' onclick='pick(this)'>INFSCI 2821 (2901)  INTRODUCTION TO BIOMEDICAL INFORMATICS</li>
-			<li id = '2825' class = 'course' onclick='pick(this)'>INFSCI 2825 (2905) PROBABILISTIC   METHODS FOR COMPUTER-BASED DECISION SUPPORT</li>
-			<li id = '12420' class = 'course' onclick='pick(this)'>TELCOM 2420 PROJECT MANAGEMENT</li>
-			<li id = '22184' class = 'course' onclick='pick(this)'>LIS 2184 LEGAL ISSUES IN INFORMATION HANDLING</li>
-			<li id = '12200' class = 'course' onclick='pick(this)'>TELCOM 2200  PHYSICAL LAYER OF COMMUNICATIONS 1</li>
-			<li id = '12510' class = 'course' onclick='pick(this)'>TELCOM  2510 U.S. TELECOMMUNICATIONS POLICY</li>
+			<li id = '2801' class = 'available' onclick='pick(this)'>INFSCI 2801 (2720) GEOSPATIAL INFORMATION SYSTEMS (GIS)</li>
+			<li id = '2802' class = 'available' onclick='pick(this)'>INFSCI 2802 (2751) INTERNET-BASED  INTEROPERABLE GIS</li>
+			<li id = '2809' class = 'available' onclick='pick(this)'>INFSCI 2809 SPATIAL MODELING AND ANALYSIS</li>
+			<li id = '2821' class = 'available' onclick='pick(this)'>INFSCI 2821 (2901)  INTRODUCTION TO BIOMEDICAL INFORMATICS</li>
+			<li id = '2825' class = 'available' onclick='pick(this)'>INFSCI 2825 (2905) PROBABILISTIC   METHODS FOR COMPUTER-BASED DECISION SUPPORT</li>
+			<li id = '12420' class = 'available' onclick='pick(this)'>TELCOM 2420 PROJECT MANAGEMENT</li>
+			<li id = '22184' class = 'available' onclick='pick(this)'>LIS 2184 LEGAL ISSUES IN INFORMATION HANDLING</li>
+			<li id = '12200' class = 'available' onclick='pick(this)'>TELCOM 2200  PHYSICAL LAYER OF COMMUNICATIONS 1</li>
+			<li id = '12510' class = 'available' onclick='pick(this)'>TELCOM  2510 U.S. TELECOMMUNICATIONS POLICY</li>
 		</ul></div>
 
 		

@@ -9,83 +9,53 @@ and open the template in the editor.
 */
 
 body {
-	background-color: #FFFFFF;
+	background-color: #FFFFF0;
+	font-family: Arial;
 }
 
-.title {
-	text-align: center;
-	color: #101010;
-	font-size: 50px;
-	font-family: serif;
-	border: #FF0000, dashed, 1px;
-	padding: 50px 5px 10px 5px;
-}
-
-.title-box {
-	text-align: center;
-	color: #101010;
-	font-size: 20px;
-	font-family: serif;
-}
 
 div {
 	padding-left: 20px;
-	border: 1px dashed #FF0000;
+	padding-right: 20px;
+	padding-bottom: 10px;
+	/*border: 1px dashed #FF0000;*/
 }
+
+.title {
+	font: 40px Arial;
+	color: #101010;
+	/*border: #FF0000, dashed, 1px;*/
+}
+
 
 .subtitle {
+	font: 15pt Arial;
+	color: #101010;
+	/*outline: #FF0000, dashed, 1px;*/
+}
+
+
+
+#input {
 	text-align: left;
+	font: italic 10pt Arial;
 	color: #101010;
-	font-size: 30px;
-	font-family: serif;
-	outline: #FF0000, dashed, 1px;
-	padding-bottom: 20px;
-	padding-top: 20px;
-}
-
-.text {
-	font-family: sans-serif;
-	color: #101010;
-	outline: #FF0000, dashed, 1px;
-}
-
-.course-area {
-	font: 20px, serif, #101010;
-	outline: #FF0000, dashed, 1px;
-
-}
-
-.course-area-box {
-	font: 8px, sans-serif, #101010;
-	outline: #101010, dashed, 1px;
-}
-
-#name-time {
-	text-align: center;
-	color: #101010;
-	font-size: 20pt;
-	font-family: serif;
-	outline: #FF0000, dashed, 1px;
+	/*outline: #FF0000, dashed, 1px;*/
 }
 
 
-.course {
-	font: 6pt, sans-serif, #101010;
-	outline: #FF0000, dashed, 1px;
-}
-
-.course-box {
-	font: 6pt, sans-serif, #101010;
-	outline: #FF0000, dashed, 1px;
+.available {
+	font: 6pt, Arial, #101010;
+	/*outline: #FF0000, dashed, 1px;*/
 }
 
 .selected {
 	text-decoration: line-through;
-	background-color: #FFFFFF;
+	color: #C0C0C0;
 }
 
 .chosen {
-	color: red;
+	color: #101010;
 	font-size: 12pt;
 	list-style-type: circle;
 }
@@ -98,14 +68,46 @@ div {
 	width: 350px;
 }
 
+
 #floatBox {
-	float: right ;
-	filter: alpha(opacity=60);
-	background-color: #ffffff;
-	border: 3px solid black;
+	float: right;
+	font-family: Arial;
+	background-color: #FFE4E1;
+	border: 2px solid #101010;
 	margin: 30px;
-	width: 350px;
+	width: 500px;
 }
+
+#floatBox:hover {
+	float: right ;
+	background-color: #FFE4E1;
+	border: 2px solid #101010;
+	margin: 30px;
+	width: 500px;
+}
+
+#box-title {
+	text-align: center;
+	color: #101010;
+	font-size: 25px;
+	font-family: Arial;
+}
+
+.box-area {
+	font: 8px, Arial, #101010;
+}
+
+.box-course {
+	font: 6pt, Arial, #101010;
+}
+
+.course-area {
+	font: 20pt, Arial, #101010;
+	/*outline: #FF0000, dashed, 1px;*/
+
+}
+
+
 
 
 

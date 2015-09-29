@@ -7,23 +7,23 @@
 init = true;
 
 function open() {
-	var name = prompt('Please enter student name:', '');
-	var advisor = prompt('Please enter advisor name:', '');
+	var name = prompt('Please enter student name:', 'N/A');
+	var advisor = prompt('Please enter advisor name:', 'N/A');
 	var date = new Date();
 
-	var elemt = document.createElement('br');
-	var node_name = document.createTextNode('This plan of study is prepared for ' + name + ' under the instruction of ' + advisor);
+	var elemt = document.createElement('p');
+	var node_name = document.createTextNode('This preparedlan of study is prepared for ' + name + ' under the instruction of ' + advisor);
 	var node_time = document.createTextNode('Today is ' + date.getMonth() + '/' + date.getDate() + '/' + date.getYear() + '.');
 
-	var node_head = document.createElement('name-time');
+	var node_head = document.getElementById('input');
 	node_head.appendChild(elemt);
 	node_head.appendChild(node_name);
 	node_head.appendChild(node_time);
 }
 
 function pick(course) {
-	/* every time the page is opened, or refreshed, it will start a new process. */
-	/* Refresh page to re-start the process. */
+	/* every time the page is opened, or refreshed, it will start a new process.
+	   Refresh page to re-start the process. */
 	if(init) {
 		open();
 		init = false;
@@ -33,10 +33,9 @@ function pick(course) {
 		return;
 	}
 
-	/* add the selected course into the print-out window. */
+	// add the selected course into the print-out window.
 	var courseID = course.getAttribute('id');
-	// var newElement;
-	// var countElement = 0;
+
 	if(courseID < 2300 || courseID == 12130) {
 		newElement = document.getElementById('foundation');
 		countElement = document.getElementById('fcount');
@@ -72,26 +71,30 @@ function pick(course) {
 	newChild.setAttribute('class', 'chosen');
 	newElement.appendChild(newChild);
 	count = newElement.childNodes.length;
-	ctnode = document.createTextNode(count);
-	countElement.removeChild(countElement.childNodes[0]);
-	countElement.appendChild(ctnode);
+	countText = document.createTextNode(count);
+	while(countElement.hasChildNodes()) {
+		countElement.removeChild(countElement.childNodes[0]);
+	}
+	countElement.appendChild(countText);
 }
 
 
-function deselect(course) {
-	var cid = course.getAttribute('id');
-	newElement = course.parentNode;
-	newElement.removeChild(course);
-	var eid = newElement.getAttribute('id').toLowerCase() + 'c';
+function deselect(coursePicked) {
+	var courseID = coursePicked.getAttribute('id');
+	newElement = coursePicked.parentNode;
+	newElement.removeChild(coursePicked);
+	var countID = newElement.getAttribute('id').charAt(0) + 'count';
 	count = newElement.childNodes.length;
-	ctnode = document.createTextNode(count);
-	countElement = document.getElementById(eid);
-	countElement.removeChild(countElement.childNodes[0]);
-	countElement.appendChild(cid);
-	ref = document.getElementById(cid);
-	ref.setAttribute('class', 'course');
+	countText = document.createTextNode(count);
+	countElement = document.getElementById(countID);
+	while(countElement.hasChildNodes()) {
+		countElement.removeChild(countElement.childNodes[0]);
+	}
+	countElement.appendChild(countText);
+	course = document.getElementById(courseID);
+	course.setAttribute('class', 'available');
+	//ref.setAttribute('onclick', 'pick(this)');
 }
-
 
 
 
